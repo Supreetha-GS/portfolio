@@ -7,7 +7,7 @@ export default function Experience() {
     <FadeIn>
       <section
         id="experience"
-        className="mx-auto max-w-7xl px-6 py-20 sm:px-8 lg:py-28"
+        className="scroll-mt-20 mx-auto max-w-7xl px-6 py-20 sm:px-8 lg:py-28"
       >
         <SectionTitle
           subtitle="Career"

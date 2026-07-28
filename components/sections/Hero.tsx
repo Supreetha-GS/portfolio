@@ -22,7 +22,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="mx-auto flex min-h-screen max-w-7xl items-center px-6 py-20 sm:px-8 lg:py-28"
+      className="scroll-mt-20 mx-auto flex min-h-screen max-w-7xl items-center px-6 py-20 sm:px-8 lg:py-28"
     >
       <div className="grid w-full gap-16 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
 

@@ -7,7 +7,7 @@ export default function Skills() {
     <FadeIn>
       <section
         id="skills"
-        className="mx-auto max-w-7xl px-8 py-28"
+        className="scroll-mt-20 mx-auto max-w-7xl px-8 py-28"
       >
 
         <SectionTitle

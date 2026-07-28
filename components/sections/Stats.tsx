@@ -6,7 +6,7 @@ import { portfolio } from "@/data/portfolio";
 export default function Stats() {
   return (
     <FadeIn>
-      <section className="mx-auto max-w-7xl px-8 py-20">
+      <section className="scroll-mt-20 mx-auto max-w-7xl px-8 py-20">
 
         <div className="grid gap-6 md:grid-cols-4">
 
