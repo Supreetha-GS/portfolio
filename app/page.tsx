@@ -6,7 +6,6 @@ import Projects from "@/components/sections/Projects";
 import Skills from "@/components/sections/Skills";
 import Certifications from "@/components/sections/Certifications";
 import Contact from "@/components/sections/Contact";
-import ScrollIndicator from "@/components/ui/ScrollIndicator";
 
 export default function Home() {
   return (
@@ -14,11 +13,6 @@ export default function Home() {
       <Navbar />
 
       <Hero />
-
-      <div className="flex justify-center py-4 sm:py-8">
-        <ScrollIndicator />
-      </div>
-
       <About />
       <Experience />
       <Projects />
