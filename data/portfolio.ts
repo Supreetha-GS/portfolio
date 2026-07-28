@@ -32,7 +32,7 @@ Incoming M.S. in Computer Science (OMSCS) student at Georgia Tech (Fall 2026).
 
     image: "/profile.jpeg",
 
-    resume: "/resume.pdf",
+    resume: "/Resume.pdf",
 
     email: "supreethags01@gmail.com",
 
@@ -81,7 +81,7 @@ Incoming M.S. in Computer Science (OMSCS) student at Georgia Tech (Fall 2026).
 
       icon: "FileText",
 
-      link: "/resume.pdf",
+      link: "/Resume.pdf",
 
       primary: true
 

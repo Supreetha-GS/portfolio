@@ -10,7 +10,7 @@ export default function About() {
     <FadeIn>
       <section
         id="about"
-        className="mx-auto max-w-7xl px-8 py-28"
+        className="mx-auto max-w-7xl px-6 py-20 sm:px-8 lg:py-28"
       >
         <SectionTitle
           subtitle={about.subtitle}
@@ -23,72 +23,74 @@ export default function About() {
           {about.paragraphs.map((paragraph, index) => (
             <p
               key={index}
-              className="text-lg leading-9 text-slate-300"
+              className="text-base leading-8 text-slate-300 sm:text-lg sm:leading-9"
             >
               {paragraph}
             </p>
           ))}
         </div>
 
-       {/* Education & Certifications */}
+        {/* Education & Certifications */}
 
-<div className="mt-16 grid gap-8 lg:grid-cols-2">
+        <div className="mt-16 grid grid-cols-1 gap-8 lg:grid-cols-2">
 
-  {/* Education */}
+          {/* Education */}
 
-  <div>
-    <h3 className="mb-6 text-xl font-semibold text-white">
-      {about.educationTitle}
-    </h3>
+          <div>
+            <h3 className="mb-6 text-xl font-semibold text-white">
+              {about.educationTitle}
+            </h3>
 
-    <div className="rounded-2xl border border-slate-800 bg-slate-900/40 p-8">
-      <div className="space-y-8">
-        {about.educationHighlights.map((education) => (
-          <div key={education.degree}>
-            <h4 className="text-lg font-semibold text-white">
-              {education.degree}
-            </h4>
+            <div className="rounded-2xl border border-slate-800 bg-slate-900/40 p-6 transition-all duration-300 hover:border-blue-500 sm:p-8">
+              <div className="space-y-8">
+                {about.educationHighlights.map((education) => (
+                  <div key={education.degree}>
+                    <h4 className="text-base font-semibold text-white sm:text-lg">
+                      {education.degree}
+                    </h4>
 
-            <p className="mt-1 text-blue-400">
-              {education.university}
-            </p>
+                    <p className="mt-2 text-blue-400">
+                      {education.university}
+                    </p>
 
-            <p className="mt-1 text-slate-400">
-              {education.duration}
-              {education.score && ` • ${education.score}`}
-            </p>
+                    <p className="mt-1 text-sm text-slate-400 sm:text-base">
+                      {education.duration}
+                      {education.score && ` • ${education.score}`}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
-        ))}
-      </div>
-    </div>
-  </div>
 
-  {/* Certifications */}
+          {/* Certifications */}
 
-  <div>
-    <h3 className="mb-6 text-xl font-semibold text-white">
-      Certifications
-    </h3>
+          <div>
+            <h3 className="mb-6 text-xl font-semibold text-white">
+              Certifications
+            </h3>
 
-    <div className="rounded-2xl border border-slate-800 bg-slate-900/40 p-8">
-      <div className="space-y-4">
-        {about.certificationHighlights.map((cert) => (
-          <div
-            key={cert}
-            className="flex items-start gap-3"
-          >
-            <span className="text-blue-400">🏆</span>
+            <div className="rounded-2xl border border-slate-800 bg-slate-900/40 p-6 transition-all duration-300 hover:border-blue-500 sm:p-8">
+              <div className="space-y-5">
+                {about.certificationHighlights.map((cert) => (
+                  <div
+                    key={cert}
+                    className="flex items-start gap-3"
+                  >
+                    <span className="mt-1 text-blue-400">
+                      🏆
+                    </span>
 
-            <p className="text-slate-300">
-              {cert}
-            </p>
+                    <p className="text-sm leading-7 text-slate-300 sm:text-base">
+                      {cert}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
-        ))}
-      </div>
-    </div>
-  </div>
 
-</div>
+        </div>
 
         {/* Featured Skills */}
 
@@ -97,7 +99,7 @@ export default function About() {
             {about.skillsTitle}
           </h3>
 
-          <div className="flex flex-wrap gap-3">
+          <div className="flex flex-wrap gap-2 sm:gap-3">
             {about.featuredSkills.map((skill) => (
               <TechBadge
                 key={skill.name}
@@ -109,14 +111,17 @@ export default function About() {
 
         {/* Stats */}
 
-        <div className="mt-20 grid grid-cols-2 gap-10 md:grid-cols-4">
+        <div className="mt-20 grid grid-cols-2 gap-5 md:grid-cols-4">
           {portfolio.stats.map((stat) => (
-            <div key={stat.label}>
-              <h3 className="text-4xl font-bold text-blue-400">
+            <div
+              key={stat.label}
+              className="rounded-2xl border border-slate-800 bg-slate-900/40 p-6 text-center transition-all duration-300 hover:-translate-y-1 hover:border-blue-500 hover:shadow-xl hover:shadow-blue-500/10"
+            >
+              <h3 className="text-3xl font-bold text-blue-400 sm:text-4xl">
                 {stat.value}
               </h3>
 
-              <p className="mt-2 text-slate-400">
+              <p className="mt-2 text-sm text-slate-400 sm:text-base">
                 {stat.label}
               </p>
             </div>

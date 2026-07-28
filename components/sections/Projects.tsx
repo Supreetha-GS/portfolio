@@ -10,105 +10,84 @@ export default function Projects() {
     <FadeIn>
       <section
         id="projects"
-        className="mx-auto max-w-7xl px-8 py-28"
+        className="mx-auto max-w-7xl px-6 py-20 sm:px-8 lg:py-28"
       >
-
         <SectionTitle
           subtitle="Portfolio"
           title="Featured Projects"
         />
 
-
-        <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-3">
-
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
           {portfolio.projects
             .filter((project) => project.featured)
             .map((project) => (
+              <motion.div
+                key={project.id}
+                whileHover={{
+                  scale: 1.02,
+                  y: -8,
+                }}
+                transition={{
+                  type: "spring",
+                  stiffness: 250,
+                  damping: 20,
+                }}
+                className="group flex h-full flex-col rounded-3xl border border-slate-800 bg-slate-900/40 p-6 transition-all duration-300 hover:border-blue-500 hover:shadow-2xl sm:p-8"
+              >
+                {/* Company */}
 
-            <motion.div
-              key={project.id}
-              whileHover={{
-                scale: 1.03,
-                y: -8,
-              }}
-              transition={{
-                type: "spring",
-                stiffness: 250,
-                damping: 20,
-              }}
-              className="group rounded-3xl border border-slate-800 bg-slate-900/40 p-8 transition-all duration-300 hover:border-blue-500 hover:shadow-2xl"
-            >
+                <p className="text-sm font-semibold text-blue-400">
+                  {project.company}
+                </p>
 
-              {/* Company */}
+                {/* Title */}
 
-              <p className="text-sm font-medium text-blue-400">
-                {project.company}
-              </p>
+                <h3 className="mt-3 text-xl font-bold text-white sm:text-2xl">
+                  {project.title}
+                </h3>
 
+                {/* Duration */}
 
-              {/* Title */}
+                <p className="mt-2 text-sm text-slate-500">
+                  {project.duration}
+                </p>
 
-              <h3 className="mt-3 text-2xl font-bold text-white">
-                {project.title}
-              </h3>
+                {/* Description */}
 
+                <p className="mt-5 flex-1 text-base leading-7 text-slate-400 sm:leading-8">
+                  {project.shortDescription}
+                </p>
 
-              {/* Duration */}
+                {/* Technologies */}
 
-              <p className="mt-2 text-sm text-slate-500">
-                {project.duration}
-              </p>
+                <div className="mt-6 flex flex-wrap gap-2">
+                  {project.technologies.map((tech) => (
+                    <span
+                      key={tech}
+                      className="rounded-full border border-slate-700 px-3 py-1 text-xs text-slate-300 transition hover:border-blue-500 hover:text-white"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
 
+                {/* Highlights */}
 
-              {/* Description */}
-
-              <p className="mt-5 leading-8 text-slate-400">
-                {project.shortDescription}
-              </p>
-
-
-              {/* Technologies */}
-
-              <div className="mt-6 flex flex-wrap gap-2">
-
-                {project.technologies.map((tech) => (
-
-                  <span
-                    key={tech}
-                    className="rounded-full border border-slate-700 px-3 py-1 text-xs text-slate-300"
-                  >
-                    {tech}
-                  </span>
-
-                ))}
-
-              </div>
-
-
-              {/* Highlights */}
-
-              <div className="mt-8 rounded-xl bg-blue-500/10 p-4">
-
-                {project.highlights.map((highlight) => (
-
-                  <p
-                    key={highlight}
-                    className="text-sm font-semibold text-blue-400"
-                  >
-                    🚀 {highlight}
-                  </p>
-
-                ))}
-
-              </div>
-
-
-            </motion.div>
-
-          ))}
-
+                <div className="mt-8 rounded-2xl border border-blue-500/20 bg-blue-500/10 p-4">
+                  <div className="space-y-2">
+                    {project.highlights.map((highlight) => (
+                      <p
+                        key={highlight}
+                        className="text-sm font-medium leading-6 text-blue-400"
+                      >
+                        🚀 {highlight}
+                      </p>
+                    ))}
+                  </div>
+                </div>
+              </motion.div>
+            ))}
         </div>
-
       </section>
     </FadeIn>
   );

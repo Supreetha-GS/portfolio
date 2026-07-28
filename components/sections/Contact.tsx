@@ -7,70 +7,72 @@ export default function Contact() {
     <FadeIn>
       <section
         id="contact"
-        className="mx-auto max-w-7xl px-8 py-28"
+        className="mx-auto max-w-7xl px-6 py-20 sm:px-8 lg:py-28"
       >
-
         <SectionTitle
           subtitle={portfolio.contact.title}
           title="Contact"
         />
 
-
-        <div className="rounded-3xl border border-slate-800 bg-slate-900/40 p-10">
-
-          <p className="text-lg leading-8 text-slate-300">
+        <div className="rounded-3xl border border-slate-800 bg-slate-900/40 p-6 transition-all duration-300 hover:border-blue-500 hover:shadow-xl hover:shadow-blue-500/10 sm:p-8 lg:p-10">
+          <p className="text-base leading-8 text-slate-300 sm:text-lg">
             {portfolio.contact.subtitle}
           </p>
 
+          <div className="mt-8 space-y-5">
 
-          <div className="mt-8 space-y-5 text-xl">
+            {/* Email */}
 
             <a
               href={`mailto:${portfolio.contact.email}`}
-              className="block text-slate-200 transition hover:text-blue-400"
+              className="flex items-center gap-3 break-all text-base text-slate-200 transition-colors hover:text-blue-400 sm:text-lg"
             >
-              📧 {portfolio.contact.email}
+              <span className="text-xl">📧</span>
+              <span>{portfolio.contact.email}</span>
             </a>
 
-            
-              <a
-                href={`tel:${portfolio.contact.phone.replace(/\s+/g, "")}`}
-                className="block text-slate-200 transition hover:text-blue-400"
-              >
-                📱 {portfolio.contact.phone}
-              </a>
-            
+            {/* Phone */}
 
+            <a
+              href={`tel:${portfolio.contact.phone.replace(/\s+/g, "")}`}
+              className="flex items-center gap-3 text-base text-slate-200 transition-colors hover:text-blue-400 sm:text-lg"
+            >
+              <span className="text-xl">📱</span>
+              <span>{portfolio.contact.phone}</span>
+            </a>
+
+            {/* LinkedIn */}
 
             <a
               href={portfolio.social.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="block text-slate-200 transition hover:text-blue-400"
+              className="flex items-center gap-3 text-base text-slate-200 transition-colors hover:text-blue-400 sm:text-lg"
             >
-              💼 LinkedIn
+              <span className="text-xl">💼</span>
+              <span>LinkedIn</span>
             </a>
 
+            {/* GitHub */}
 
             <a
               href={portfolio.social.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="block text-slate-200 transition hover:text-blue-400"
+              className="flex items-center gap-3 text-base text-slate-200 transition-colors hover:text-blue-400 sm:text-lg"
             >
-              💻 GitHub
+              <span className="text-xl">💻</span>
+              <span>GitHub</span>
             </a>
 
+            {/* Location */}
 
-            <p className="text-slate-400">
-              📍 {portfolio.contact.location}
-            </p>
-
-
+            <div className="flex items-center gap-3 text-base text-slate-400 sm:text-lg">
+              <span className="text-xl">📍</span>
+              <span>{portfolio.contact.location}</span>
+            </div>
           </div>
-
         </div>
-
       </section>
     </FadeIn>
   );

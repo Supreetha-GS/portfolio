@@ -10,13 +10,15 @@ import ScrollIndicator from "@/components/ui/ScrollIndicator";
 
 export default function Home() {
   return (
-    <main className="bg-slate-950 text-white">
+    <main className="overflow-x-hidden bg-slate-950 text-white">
       <Navbar />
 
       <Hero />
-      <div className="flex justify-center py-8">
+
+      <div className="flex justify-center py-4 sm:py-8">
         <ScrollIndicator />
       </div>
+
       <About />
       <Experience />
       <Projects />
