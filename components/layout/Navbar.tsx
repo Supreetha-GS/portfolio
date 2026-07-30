@@ -18,7 +18,9 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
+    let ticking = false;
+
+    const updateActiveSection = () => {
       const middle = window.innerHeight / 2;
 
       // Highlight Contact when reaching the bottom
@@ -44,24 +46,35 @@ export default function Navbar() {
       }
     };
 
-    window.addEventListener("scroll", handleScroll);
+    const handleScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          updateActiveSection();
+          ticking = false;
+        });
 
-    handleScroll();
+        ticking = true;
+      }
+    };
 
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    updateActiveSection();
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   return (
     <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      transition={{ duration: 0.5 }}
+      transition={{ duration: 0.3, ease: "easeOut" }}
       className="fixed top-0 left-0 z-50 w-full border-b border-slate-800 bg-slate-950/80 backdrop-blur-lg"
     >
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 lg:px-8">
-
         {/* Logo */}
-
         <a
           href="#hero"
           className="flex items-center gap-4 transition-opacity hover:opacity-80"
@@ -71,18 +84,13 @@ export default function Navbar() {
           </div>
 
           <div>
-            <h1 className="font-semibold text-white">
-              Supreetha G S
-            </h1>
+            <h1 className="font-semibold text-white">Supreetha G S</h1>
 
-            <p className="text-xs text-slate-400">
-              Data Engineer
-            </p>
+            <p className="text-xs text-slate-400">Data Engineer</p>
           </div>
         </a>
 
         {/* Desktop Navigation */}
-
         <div className="hidden items-center gap-8 md:flex">
           {links.map((link) => (
             <a
@@ -100,7 +108,6 @@ export default function Navbar() {
         </div>
 
         {/* Mobile Menu */}
-
         <button
           className="text-white md:hidden"
           onClick={() => setIsOpen(!isOpen)}
@@ -111,7 +118,6 @@ export default function Navbar() {
       </div>
 
       {/* Mobile Navigation */}
-
       {isOpen && (
         <div className="border-t border-slate-800 bg-slate-950 md:hidden">
           <div className="flex flex-col py-4">

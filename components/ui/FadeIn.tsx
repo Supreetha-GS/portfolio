@@ -12,7 +12,7 @@ export default function FadeIn({ children }: Props) {
     <motion.div
       initial={{
         opacity: 0,
-        y: 40,
+        y: 20,
       }}
       whileInView={{
         opacity: 1,
@@ -20,10 +20,11 @@ export default function FadeIn({ children }: Props) {
       }}
       viewport={{
         once: true,
-        amount: 0.2,
+        amount: 0.15,
       }}
       transition={{
-        duration: 0.7,
+        duration: 0.4,
+        ease: "easeOut",
       }}
     >
       {children}

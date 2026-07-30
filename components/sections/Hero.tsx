@@ -29,10 +29,10 @@ export default function Hero() {
         {/* Profile Image - Mobile First */}
         <motion.div
           initial={{
-            opacity: 0,
-            x: 40,
-            scale: 0.9,
-          }}
+              opacity: 0,
+              x: 20,
+              scale: 0.97,
+            }}
           animate={{
             opacity: 1,
             x: 0,
@@ -40,11 +40,11 @@ export default function Hero() {
             y: [0, -10, 0],
           }}
           transition={{
-            opacity: { duration: 0.8 },
-            x: { duration: 0.8 },
-            scale: { duration: 0.8 },
+            opacity: { duration: 0.45 },
+            x: { duration: 0.45 },
+            scale: { duration: 0.45 },
             y: {
-              duration: 5,
+              duration: 6,
               repeat: Infinity,
               ease: "easeInOut",
             },
@@ -69,9 +69,12 @@ export default function Hero() {
 
         {/* Left */}
         <motion.div
-          initial={{ opacity: 0, x: -40 }}
+          initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{
+            duration: 0.45,
+            ease: "easeOut",
+          }}
           className="order-2 mx-auto max-w-2xl text-center lg:order-1 lg:mx-0 lg:text-left"
         >
           <p className="text-base font-semibold text-blue-400 sm:text-lg">
