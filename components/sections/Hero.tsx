@@ -55,15 +55,14 @@ export default function Hero() {
             <div className="absolute inset-0 rounded-full bg-blue-500/10 blur-3xl" />
 
             <div className="relative rounded-full border-4 border-blue-500 p-2 shadow-2xl">
-              {/* <Image
+              <Image
                 src={portfolio.profile.image}
                 alt={portfolio.profile.fullName}
                 width={320}
                 height={320}
                 priority
                 className="h-56 w-56 rounded-full object-cover sm:h-72 sm:w-72 lg:h-[320px] lg:w-[320px]"
-              /> */}
-              <div className="h-56 w-56 rounded-full bg-slate-700 sm:h-72 sm:w-72 lg:h-[320px] lg:w-[320px]" />
+              />
             </div>
           </div>
         </motion.div>
