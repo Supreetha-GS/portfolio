@@ -199,7 +199,8 @@ about: {
     "Databricks Accreditation - Generative AI Fundamentals",
     "Microsoft Certified -  Azure Fundamentals (AZ-900)",
     "NPTEL - Artificial Intelligence: Search Methods for Problem Solving",
-    "NPTEL - Intellectual Property"
+    "NPTEL - Intellectual Property",
+    "IELTS Academic English Proficiency - Overall Band 7.5"
   ],
 
   skillsTitle:
@@ -770,11 +771,11 @@ experience: [
     { name: "Performance Tuning", level: "Advanced" }
   ],
 
-  "Generative AI": [
-    { name: "Azure OpenAI", level: "Intermediate" },
+  "AI/ML": [
+    { name: "Generative AI", level: "Intermediate" },
     { name: "Prompt Engineering", level: "Intermediate" },
-    { name: "AI-assisted Data Migration", level: "Advanced" },
-    { name: "Metadata Intelligence", level: "Advanced" }
+    { name: "Langchain", level: "Intermediate" },
+    { name: "Pinecone", level: "Intermediate" }
   ],
 
   DevOps: [
@@ -970,6 +971,24 @@ experience: [
 
       badge:
         "/certifications/nptel-ai.png",
+
+      credential: ""
+
+    },
+
+    {
+
+      title:
+        "IELTS Academic English Proficiency - Overall Band 7.5",
+
+      issuer:
+        "IELTS",
+
+      year:
+        "2025",
+
+      badge:
+        "/certifications/ielts.png",
 
       credential: ""
 
